@@ -5,52 +5,62 @@
     <title>User File Upload</title>
     <link rel="stylesheet" href="main.css">
     <style type="text/css">
+
     
     </style>
+    <script type="text/javascript" src="compareArrays.js"></script>
+    <script type="text/javascript" src="answer_key.js"></script>
 </head>
 <body>
    <h1>Select answer key/file to upload</h1>
-   <input type="file" id="fileInputUser"/>
+        <script type="text/javascript">
+                //MOVE TO USER
+                //
+                //
+                //
+                //NOTE CSV AND TXT ARE READ IN AS STRING
+                var userTextAsString = "";
+                var submittedAnswers = [];
+                function loadFile(o)
+                {
+                    var fr = new FileReader();
+                    fr.onload = function(e)
+                        {
+                            //showDataFile(e, o);
+                            document.getElementById("data").innerText = e.target.result;
+                            converter(e);
+                            console.log(submittedAnswers/*.toString()*/)
+                            var score = compare(Answers, submittedAnswers)
+                window.alert("Your score for this assignment is a " +score.toString())
+                        };
+                    fr.readAsText(o.files[0]);
+                }
 
-   <script>
-    var fileInput = document.getElementById('fileInputUser');
-    fileInput.addEventListener('change', function(e) {
-			var file = fileInput.files[0];
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                createUser(reader.result)
-            }
-            reader.readAsText(file)
-    });
-       
-    var userFiles= [];
-       
-    function createUser(i){
-        var fl ={
-            1: "A",
-            2: "A",
-            3: "A",
-            4:"A",
-            5:"A",
-            6:"A",
-            7:"A",
-            8:"A",
-            9:"A"  
-        };
-        var res = [];
-        for(x in i){
-            res.push(x);
-        }
-        
-        for(var y = 1; y<res.length; y+=2){
-            fl.1 = res[y]
-        }
-        
-        userFiles.push(fl)
+                /*function showDataFile(e, o)
+                {
+                    document.getElementById("data").innerText = e.target.result;
+                }
+                */
             
-    }
-    
-    </script>
+                function converter(e){
+                    
+                    var innerArray = []
+                    userTextAsString += e.target.result.split(' ');
+                    for(i=0; i<userTextAsString.length; i++){
+                        submittedAnswers.push(userTextAsString.charAt(i))
+                    }
+                    //submittedAnswers.push(innerArray);
+                }
+                //
+                //
+                //
+                //
+                //
+
+            </script>
+        <input type="file" accept = ".txt, .csv" onchange="loadFile(this)">
+        <pre id="data"></pre>   
+
         <form method="get" action="login.html">
         <center>
         <button type="submit">Home</button>

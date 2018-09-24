@@ -5,8 +5,11 @@
     <title>User File Upload</title>
     <link rel="stylesheet" href="main.css">
     <style type="text/css">
+
     
     </style>
+    <script type="text/javascript" src="compareArrays.js"></script>
+    <script type="text/javascript" src="answer_key.js"></script>
 </head>
 <body>
    <h1>Select answer key/file to upload</h1>
@@ -27,6 +30,8 @@
                             document.getElementById("data").innerText = e.target.result;
                             converter(e);
                             console.log(submittedAnswers/*.toString()*/)
+                            var score = compare(Answers, submittedAnswers)
+                window.alert(score)
                         };
                     fr.readAsText(o.files[0]);
                 }
@@ -51,7 +56,7 @@
                 //
                 //
                 //
-                
+
             </script>
         <input type="file" accept = ".txt, .csv" onchange="loadFile(this)">
         <pre id="data"></pre>   

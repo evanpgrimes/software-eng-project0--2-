@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="Users.js" type="text/javascript"></script>
+    
+</head>
+<body>
+   <h1><center>Login to Upload File</center></h1>
+    <div class="container-fluid">
+    <form>
+        <center>
+			<input type="text" id="username" placeholder="Username">
+			<input type="password" id="password" placeholder="Password">
+			<button type="button" onclick="getInfo()">Login</button>
+        </center>
+	</form>		
+    <form method="get" action="file-submit-guest.html">
+        <center>
+        <button type="submit">Guest</button>
+        </center>
+    </form>
+    </div>
+<script>
+var found = false;
+function getInfo(){
+        var username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+
+        adminCheck(username,password)
+        console.log("Admin not found, trying User");
+        userCheck(username,password)
+        if (found == false){
+                window.alert('Username or password did not match');
+            }
+        console.log('not found');
+    }
+    </script>
+
+</body>
+</html>

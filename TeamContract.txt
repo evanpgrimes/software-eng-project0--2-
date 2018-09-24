@@ -1,0 +1,36 @@
+• Names and Emails 
+  1.	Connor Creek: Cac7376@utexas.edu
+  2.	Sam Bernasconi: bernasconisamuel@gmail.com
+  3.	Robert Saenz: rsaenz8080@gmail.com
+  4.	Carlos Alvarado: carlosalvarado1269@utexas.edu
+  5.	Isai Cruz: icruz1996@yahoo.com
+  6.	Evan Grimes: evanpgrimes@utexas.edu
+
+• Team Name
+  1.	Too Many Cooks
+
+• Meeting day(s)/time(s)/location(s)
+  1.	Monday 4-6 @ PCL
+
+• Rules of the Team
+  1. Commit your code to GitHub repo at least a day ahead of due date
+    a. at least one person must review your work
+    b. Commit your code to directly to the GitHub repo so that we can ensure all members are pulling equal weight 
+    c. if a member does not deliver their completed portion a day ahead of time or inform the rest of the team of a potential delay then the teacher will be notified, and they will be penalized by 25%?
+  2.	split up projects into equal parts 
+  3.	have an initial meeting as early as possible to discuss project and assign tasks
+  4.	communicate with the group if you have time constraints or other difficulties
+  5.	if you feel the need to alter someone else’s code, first notify the entire team through the GroupMe chat and get approval
+  6.	show up to majority of team meetings
+  7.	Isai Cruz will handle:
+    a.	The person to contact if someone has an emergency
+    b.	Communicating with the instructor
+    c.	Submitting finished projects (if only one member is supposed to do so)
+
+• Coding Standards
+  1.	Useful comments
+  2.	Use Spaces 
+  3.	Do not copy code from the internet 
+  4.	Add upper/lower boundaries with names to see what each person has done
+  5.	Try to keep it simple
+  6.	Get an A

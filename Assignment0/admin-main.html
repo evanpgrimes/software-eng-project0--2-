@@ -1,0 +1,86 @@
+<html>
+    <head>
+    <script type="text/javascript" src="Users.js"></script>
+
+        <meta charset="UTF-8">
+        <title>Admin File Upload</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Select answer key/file to upload</h1>
+        <script type="text/javascript">
+                //MOVE TO USER
+                //
+                //
+                //
+                //
+                var userTextAsString = "";
+                var submittedAnswers = [];
+                function loadFile(o)
+                {
+                    var fr = new FileReader();
+                    fr.onload = function(e)
+                        {
+                            //showDataFile(e, o);
+                            document.getElementById("data").innerText = e.target.result;
+                            converter(e);
+                            console.log(submittedAnswers.toString())
+                        };
+                    fr.readAsText(o.files[0]);
+                }
+
+                /*function showDataFile(e, o)
+                {
+                    document.getElementById("data").innerText = e.target.result;
+                }
+                */
+            
+                function converter(e){
+                    var innerArray = []
+                    userTextAsString += e.target.result.split(' ');
+                    for(i=0; i<userTextAsString.length; i++){
+                        innerArray.push([userTextAsString.charAt(i)])
+                    }
+                    submittedAnswers.push(innerArray);
+                }
+                //
+                //
+                //
+                //
+                //
+                
+            </script>
+        <input type="file" accept = ".txt, .csv" onchange="loadFile(this)">
+        <pre id="data"></pre>
+        <h2> Add a User</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <input type="button" onclick="createUser()">Create User</button>
+        <script>
+            function createUser(){
+                var username = document.getElementById('username').value
+                var password = document.getElementById('password').value
+                addUser(username, password)
+            }
+        </script>
+        <h3> Remove a User </h3>
+        <input type="text" id="username" placeholder="Username">
+        <input type="button" onclick="removeUser()">Remove User</button>
+        <script>
+            function deleteUser(){
+                var username = document.getElementById('username').value
+                removeUser(username)
+            }
+        </script>
+
+        <h4>  </h4>
+        <input type="button" onclick="window.alert(Requests)">View Requests</button>
+        <input type="button" onclick="window.alert(Users)">View Users</button>
+            <form method="get" action="login.html">
+        <center>
+        <button type="submit">Home</button>
+        </center>
+    </form>
+
+    </body>
+</html>

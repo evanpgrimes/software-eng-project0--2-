@@ -13,7 +13,7 @@
                 //
                 //
                 //
-                //
+                //NOTE CSV AND TXT ARE READ IN AS STRING
                 var userTextAsString = "";
                 var submittedAnswers = [];
                 function loadFile(o)
@@ -24,7 +24,7 @@
                             //showDataFile(e, o);
                             document.getElementById("data").innerText = e.target.result;
                             converter(e);
-                            console.log(submittedAnswers.toString())
+                            console.log(submittedAnswers/*.toString()*/)
                         };
                     fr.readAsText(o.files[0]);
                 }
@@ -36,12 +36,13 @@
                 */
             
                 function converter(e){
+                    
                     var innerArray = []
                     userTextAsString += e.target.result.split(' ');
                     for(i=0; i<userTextAsString.length; i++){
-                        innerArray.push([userTextAsString.charAt(i)])
+                        submittedAnswers.push(userTextAsString.charAt(i))
                     }
-                    submittedAnswers.push(innerArray);
+                    //submittedAnswers.push(innerArray);
                 }
                 //
                 //

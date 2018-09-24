@@ -9,14 +9,17 @@ function addUser(userName1, password1){
         if (temp != true){
         Users.push({username:userName1, password: password1})
     }
+    updateUser()
     }
 
     function removeUser(username){
+        console.log(2)
         for (i=0; i<Users.length; i++){
-            if (username== Users[i].username){
-                delete Users[i]
+            if (username == Users[i].username){
+                Users.splice(i,1)
             }
         }
+        updateUser()
     }
     function adminCheck(username,password)
     {
@@ -65,9 +68,10 @@ function addUser(userName1, password1){
     function removeRequest(username, password){
         for (i=0; i<Requests.length; i++){
             if (username== Request[i].username){
-                delete Requests[i]
+                Requests.splice(i,1)
             }
         }
+        updateRequest()
     }
     function addRequest(userName1,password1){
         var temp = false;
@@ -79,14 +83,29 @@ function addUser(userName1, password1){
         }
         if (temp != true){
         Requests.push({username:userName1, password: password1})
+        updateRequest()
     }
     }
-    function displayRequests(){
-            console.log(Requests)
+
+    function updateUser(){
+        userList = []
+        for (i=0; i<Users.length;i++){
+            userList.push(Users[i].username)
+
+        } 
+    return(userList.toString())
         }
-    function displayUsers(){
-        console.log(Users)
+    function updateRequest(){
+       requestList = []
+       if (Requests.length > 0){
+        for (i=0; i<Requests.length;i++){
+            requestList.push(Requests[i].username)
+    } 
+    return(requestList.toString())} else{
+        window.alert("There are no requests")
     }
+}
+
      var Users=[{
         username:"Carlos",
         password:"OUsucks"
@@ -112,4 +131,4 @@ function addUser(userName1, password1){
         password:"bevo420"
     }]   
 
-    var Requests =[]
+    var Requests =[];

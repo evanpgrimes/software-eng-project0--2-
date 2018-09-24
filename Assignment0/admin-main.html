@@ -60,7 +60,7 @@
         <h2> Add a User</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
-        <input type="button" onclick="createUser()">Create User</button>
+        <input type="button" onclick="createUser(username,password)">Create User</button>
         <script>
             function createUser(){
                 var username = document.getElementById('username').value
@@ -69,18 +69,19 @@
             }
         </script>
         <h3> Remove a User </h3>
-        <input type="text" id="username" placeholder="Username">
-        <input type="button" onclick="removeUser()">Remove User</button>
+        <input type="text" id="username2" placeholder="Username">
+        <input type="button" onclick="deleteUser()">Remove User</button>
         <script>
             function deleteUser(){
-                var username = document.getElementById('username').value
-                removeUser(username)
+                var username2 = document.getElementById('username2').value
+                removeUser(username2)
             }
         </script>
 
         <h4>  </h4>
-        <input type="button" onclick="window.alert(Requests)">View Requests</button>
-        <input type="button" onclick="window.alert(Users)">View Users</button>
+
+        <input type="button" onclick="window.alert(updateRequest())">View Requests</button>
+        <input type="button" onclick="window.alert(updateUser())">View Users</button>
             <form method="get" action="login.html">
         <center>
         <button type="submit">Home</button>

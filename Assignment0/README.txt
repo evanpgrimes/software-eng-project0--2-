@@ -5,3 +5,11 @@ NOTE:
 .csv files are similar to above, with the difference being that they must have the question number and answer in each subsequent column so that the .csv has 1 row and 20 columns (10 for each question number and its respective answer).
 
 If these instructions are unclear, a sample .csv and .txt for answers is included with the files under the names "tester.txt" and "testerCSV.csv"
+
+USER ROLES:
+
+Admin: The administrator can add and remove users, and also display any guest user creation requests and the list of current users
+
+User: A user can upload his/her answer sheet (under the constraints of the above directions) to be graded with the answer key and receive that grade
+
+Guest: The guest can send a request to the administrator to be added into the system as a user with a given username and password

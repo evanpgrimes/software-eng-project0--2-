@@ -3,24 +3,14 @@ function compare(A, B) {
     var correct = 0;
   
     
-    if (B[1] == ",") {
-        console.log(2)
-        for (var i=1; i<20; i=i+2) {  
-            if (A[i] == B[i*2]) {
-                
-                correct += 1
-            console.log(1)
-            } 
-        }
-    }
-    else {
+
         
-        for (var i=1; i<20; i=i+2) {  
-            if (A[i] == B[i]) {
+        for (var i=0; i<10; i=i+1) {  
+            if (A[i].toUpperCase() == B[i].toUpperCase()) {
                 correct += 1
             }
         }
-    }
+    
     
     var score = (correct/10)*100;
     return(score)

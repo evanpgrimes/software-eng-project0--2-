@@ -29,7 +29,7 @@
                             //showDataFile(e, o);
                             document.getElementById("data").innerText = e.target.result;
                             converter(e);
-                            console.log(submittedAnswers/*.toString()*/)
+                            console.log(Answers/*.toString()*/)
                             var score = compare(Answers, submittedAnswers)
                 window.alert("Your score for this assignment is a " +score.toString())
                         };
@@ -45,10 +45,15 @@
                 function converter(e){
                     
                     var innerArray = []
+                    
                     userTextAsString += e.target.result.split(' ');
+                    
                     for(i=0; i<userTextAsString.length; i++){
-                        submittedAnswers.push(userTextAsString.charAt(i))
+                        if (userTextAsString.charAt(i) == '~'){
+                            submittedAnswers.push(userTextAsString.charAt(i+1))    
+                        }
                     }
+                    
                     //submittedAnswers.push(innerArray);
                 }
                 //

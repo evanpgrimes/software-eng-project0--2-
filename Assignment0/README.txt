@@ -13,3 +13,9 @@ Admin: The administrator can add and remove users, and also display any guest us
 User: A user can upload his/her answer sheet (under the constraints of the above directions) to be graded with the answer key and receive that grade
 
 Guest: The guest can send a request to the administrator to be added into the system as a user with a given username and password
+
+
+Coded logins (found in Users.js, use these):
+
+Admin - username: Sam password: longhorns
+User - username: Carlos password: UT

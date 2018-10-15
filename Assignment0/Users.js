@@ -108,7 +108,7 @@ function addUser(userName1, password1){
 
      var Users=[{
         username:"Carlos",
-        password:"OUsucks"
+        password:"UT"
     },
     {
         username:"Isai",
@@ -120,7 +120,7 @@ function addUser(userName1, password1){
     }]
     var Admins=[{
         username:"Sam",
-        password:"longhorn69"
+        password:"longhorns"
     },
     {
         username: "Connor",
@@ -128,7 +128,7 @@ function addUser(userName1, password1){
     },
     {
         username:"Evan",
-        password:"bevo420"
+        password:"bevo"
     }]   
 
     var Requests =[];

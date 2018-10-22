@@ -1,21 +1,14 @@
-NOTE:
+Admin checks requests, adds and deletes users, and uploads answer key to be checked against users' file uploads. Users upload their file that they want to be checked against file that admin currently has uploaded and user receives corresponding grade. Guests can request to have an account created for them so they can gain the ability to login and upload their assignment file. <br><br>
+            
+            Note: Functionality of the program only allows one assignment to be graded at a time until the admin updates the answer key (by uploading a new file). <br><br>
+            
+            Coded logins (found in Users.js, use these):
 
-.txt files must have answers for each question of the form "0A1B2C..." (with the letter after the number being the multiple choice answer of the respective question) with the initial question number being 0 and there being 10 total different question numbers (i.e. starting with 0 and the last one being 9). All question numbers must be entered, even if with a whitespace answer. Answers must be capitalized
+            Admin - username: Sam password: longhorns
+            User - username: Carlos password: UT<br><br>
+            
+        USER ROLES: <br><br> Admin: The administrator can add and remove users, and also display any guest user creation requests and the list of current users <br><br>
 
-.csv files are similar to above, with the difference being that they must have the question number and answer in each subsequent column so that the .csv has 1 row and 20 columns (10 for each question number and its respective answer).
-
-If these instructions are unclear, a sample .csv and .txt for answers is included with the files under the names "tester.txt" and "testerCSV.csv"
-
-USER ROLES:
-
-Admin: The administrator can add and remove users, and also display any guest user creation requests and the list of current users
-
-User: A user can upload his/her answer sheet (under the constraints of the above directions) to be graded with the answer key and receive that grade
+User: A user can upload his/her answer sheet (using the test_stack.txt and test_stack.csv files) to be graded with the answer key and receive that grade<br><br>
 
 Guest: The guest can send a request to the administrator to be added into the system as a user with a given username and password
-
-
-Coded logins (found in Users.js, use these):
-
-Admin - username: Sam password: longhorns
-User - username: Carlos password: UT

@@ -1,12 +1,15 @@
+/*eslint-disable*/
 function compare(A, B) {
     "use strict";
     var correct = 0;
   
-    
+    console.log("sadfsf")
 
         
-        for (var i=0; i<10; i=i+1) {  
+        for (i=0; i<10; i=i+1) {  
             if (A[i].toUpperCase() == B[i].toUpperCase()) {
+                console.log(A[i])
+                console.log(B[i])
                 correct += 1
             }
         }

@@ -29,8 +29,9 @@
                             //showDataFile(e, o);
                             document.getElementById("data").innerText = e.target.result;
                             converter(e);
-                            console.log(Answers/*.toString()*/)
-                            var score = compare(Answers, submittedAnswers)
+                            console.log(JSON.parse(sessionStorage.getItem('Answers'))/*.toString()*/)
+                            console.log(typeof(submittedAnswers))
+                            var score = compare(JSON.parse(sessionStorage.getItem('Answers')), submittedAnswers)
                 window.alert("Your score for this assignment is a " +score.toString())
                         };
                     fr.readAsText(o.files[0]);

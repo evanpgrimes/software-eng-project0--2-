@@ -105,7 +105,7 @@ function addUser(userName1, password1){
        requestList = []
        if (Requests.length > 0){
         for (i=0; i<Requests.length;i++){
-            requestList.push(Requests[i].username)
+            requestList.push("Username: "+Requests[i].username+" Password: "+Requests[i].password+"\n")
     } 
     return(requestList.toString())} else{
         window.alert("There are no requests")

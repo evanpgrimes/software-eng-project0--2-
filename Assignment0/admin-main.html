@@ -1,13 +1,14 @@
 <html>
     <head>
     <script type="text/javascript" src="Users.js"></script>
+    <script type="text/javascript" src="answer_key.js"></script>
 
         <meta charset="UTF-8">
         <title>Admin File Upload</title>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <!-- <h1>Select answer key/file to upload</h1>
+         <h1>Select answer key/file to upload</h1>
 
         <script type="text/javascript">
             
@@ -17,7 +18,7 @@
                 //
                 //NOTE CSV AND TXT ARE READ IN AS STRING
                 var userTextAsString = "";
-                var submittedAnswers = [];
+                var newAnswers = [];
                 function loadFile(o)
                 {
                     var fr = new FileReader();
@@ -26,37 +27,30 @@
                             //showDataFile(e, o);
                             document.getElementById("data").innerText = e.target.result;
                             converter(e);
-                            console.log(submittedAnswers/*.toString()*/)
+                            updateAnswers(newAnswers)
                         };
                     fr.readAsText(o.files[0]);
                 }
 
-                /*function showDataFile(e, o)
-                {
-                    document.getElementById("data").innerText = e.target.result;
-                }
-                */
+
             
                 function converter(e){
                     
                     var innerArray = []
+                    
                     userTextAsString += e.target.result.split(' ');
+                    
                     for(i=0; i<userTextAsString.length; i++){
-                        submittedAnswers.push(userTextAsString.charAt(i))
+                        if (userTextAsString.charAt(i) == '~'){
+                            newAnswers.push(userTextAsString.charAt(i+1))    
+                        }
                     }
-                    //submittedAnswers.push(innerArray);
                 }
-                //
-                //
-                //
-                //
-                //
                 
             </script>
 
         <input type="file" accept = ".txt, .csv" onchange="loadFile(this)">
         <pre id="data"></pre>
--->
         <h2> Add a User</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">

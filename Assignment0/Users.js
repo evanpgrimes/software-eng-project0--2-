@@ -8,6 +8,7 @@ function addUser(userName1, password1){
         }
         if (temp != true){
         Users.push({username:userName1, password: password1})
+        sessionStorage.setItem('Users',JSON.stringify(Users))
     }
     updateUser()
     }
@@ -17,6 +18,8 @@ function addUser(userName1, password1){
         for (i=0; i<Users.length; i++){
             if (username == Users[i].username){
                 Users.splice(i,1)
+                sessionStorage.removeItem('Users')
+                sessionStorage.setItem('Users',JSON.stringify(Users))
             }
         }
         updateUser()
@@ -69,6 +72,8 @@ function addUser(userName1, password1){
         for (i=0; i<Requests.length; i++){
             if (username== Request[i].username){
                 Requests.splice(i,1)
+                sessionStorage.removeItem('Requests')
+                sessionStorage.setItem('Requests', JSON.stringify(Requests))
             }
         }
         updateRequest()
@@ -83,6 +88,7 @@ function addUser(userName1, password1){
         }
         if (temp != true){
         Requests.push({username:userName1, password: password1})
+        sessionStorage.setItem('Requests', JSON.stringify(Requests))
         updateRequest()
     }
     }
@@ -93,7 +99,7 @@ function addUser(userName1, password1){
             userList.push(Users[i].username)
 
         } 
-    return(userList.toString())
+        return(userList.toString())
         }
     function updateRequest(){
        requestList = []
@@ -106,7 +112,7 @@ function addUser(userName1, password1){
     }
 }
 
-     var Users=[{
+     var Users = sessionStorage.getItem('Users') ? JSON.parse(sessionStorage.getItem('Users')) : [{
         username:"Carlos",
         password:"UT"
     },
@@ -118,7 +124,7 @@ function addUser(userName1, password1){
         username:"Robert",
         password:"hookem16"
     }]
-    var Admins=[{
+    var Admins = sessionStorage.getItem('Admins') ? JSON.parse(sessionStorage.getItem('Admins')) : [{
         username:"Sam",
         password:"longhorns"
     },
@@ -131,4 +137,8 @@ function addUser(userName1, password1){
         password:"bevo"
     }]   
 
-    var Requests =[];
+    var Requests = sessionStorage.getItem('Requests') ? JSON.parse(sessionStorage.getItem('Requests')) : []
+
+    sessionStorage.setItem('Users', JSON.stringify(Users))
+    sessionStorage.setItem('Requests', JSON.stringify(Requests))
+    sessionStorage.setItem('Admins', JSON.stringify(Admins))
